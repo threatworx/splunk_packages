@@ -1,2 +1,2 @@
 # splunk_add_on_pkg
-Splunk Add on packages
+This repository contains Splunk Apps/Add-on packages
