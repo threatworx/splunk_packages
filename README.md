@@ -12,3 +12,11 @@ https://github.com/threatworx/splunk_packages/blob/master/packages/add_on/TA-thr
 7. Configure a new input by navigating to <i>"Inputs --> Create New Input"</i>
 
 <p>You are all set.</p>
+
+<b>Note</b> if you have a distributed Splunk environment (comprising of multiple Splunk Indexers, Splunk Heavy Forwarders, Splunk Search Head Clusters) you will want to update props.conf on the Splunk Search Head to avoid double JSON extraction at search time as below:<br>
+<pre>
+$ cat $SPLUNK_HOME/etc/apps/shc_TA_threatworx/local/props.conf
+[threatworx:vulnerability:impact]
+KV_MODE = none
+AUTO_KV_JSON = false
+</pre>
